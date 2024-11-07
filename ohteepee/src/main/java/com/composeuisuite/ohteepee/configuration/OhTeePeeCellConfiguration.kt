@@ -10,26 +10,27 @@ import androidx.compose.ui.unit.dp
 
 data class OhTeePeeCellConfiguration(
     val shape: Shape,
-    val backgroundColor: Color,
+    val cellBackground: OhTeePeeCellBackground,
     val borderColor: Color,
     val borderWidth: Dp,
     val textStyle: TextStyle,
     val placeHolderTextStyle: TextStyle,
 ) {
+
     companion object {
         val BORDER_WIDTH = 1.dp
 
         @Composable
         fun withDefaults(
             shape: Shape = MaterialTheme.shapes.medium,
-            backgroundColor: Color = MaterialTheme.colors.surface,
+            cellBackground: OhTeePeeCellBackground = OhTeePeeCellBackground.Solid(MaterialTheme.colors.surface),
             borderColor: Color = MaterialTheme.colors.primary,
             borderWidth: Dp = BORDER_WIDTH,
             textStyle: TextStyle = TextStyle(),
             placeHolderTextStyle: TextStyle = textStyle,
         ) = OhTeePeeCellConfiguration(
             shape = shape,
-            backgroundColor = backgroundColor,
+            cellBackground = cellBackground,
             borderColor = borderColor,
             borderWidth = borderWidth,
             textStyle = textStyle,
